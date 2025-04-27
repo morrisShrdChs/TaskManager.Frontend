@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <h2>Регистрация</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Имя пользователя</label>
+          <input [(ngModel)]="registerData.userName" name="userName" type="text" class="form-control" id="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input [(ngModel)]="registerData.email" name="email" type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Имя</label>
+          <input [(ngModel)]="registerData.name" name="name" type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input [(ngModel)]="registerData.password" name="password" type="password" class="form-control" id="password" required>
+        </div>
+        <div class="mb-3">
+          <label for="role" class="form-label">Роль</label>
+          <select [(ngModel)]="registerData.role" name="role" id="role" class="form-control" required>
+            <option value="User">Пользователь</option>
+            <option value="Admin">Администратор</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Зарегистрироваться</button>
+      </form>
+      <div class="text-center mt-3">
+        <a routerLink="/auth/login">Уже есть аккаунт? Войти</a>
+      </div>
+    </div>
+  </div>
+</div>

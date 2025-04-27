@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <h2>Вход</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Имя пользователя</label>
+          <input [(ngModel)]="loginData.userName" name="userName" type="text" class="form-control" id="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input [(ngModel)]="loginData.password" name="password" type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Войти</button>
+      </form>
+      <div class="text-center mt-3">
+        <a routerLink="/auth/register">Нет аккаунта? Зарегистрироваться</a>
+      </div>
+    </div>
+  </div>
+</div>
+
