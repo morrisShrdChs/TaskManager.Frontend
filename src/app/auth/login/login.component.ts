@@ -20,7 +20,8 @@ export class LoginComponent {
       error: err => {
         console.error(err);
         alert('Ошибка входа!');
-      }
+
+}
     });
   }
 }
