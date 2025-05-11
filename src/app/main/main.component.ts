@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from './services/task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +11,7 @@ export class MainComponent implements OnInit {
   tasks: any[] = [];
   newTaskTitle: string = '';
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit() {
     this.loadTasks();
@@ -37,6 +38,10 @@ export class MainComponent implements OnInit {
       },
       error => console.error('Error adding task', error)
     );
+  }
+
+  goToCreateTask() {
+    this.router.navigate(['/main/create-task']);
   }
 }
 

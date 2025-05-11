@@ -1,0 +1,31 @@
+<h2>Создать задачу</h2>
+
+<form (ngSubmit)="createTask()">
+  <input [(ngModel)]="name" name="name" placeholder="Название задачи" required />
+
+  <textarea [(ngModel)]="description" name="description" placeholder="Описание"></textarea>
+
+  <label>Дата начала:</label>
+  <input type="date" [(ngModel)]="startDate" name="startDate" required />
+
+  <label>Дата окончания:</label>
+  <input type="date" [(ngModel)]="expDate" name="expDate" required />
+
+  <label>Приоритет:</label>
+  <select [(ngModel)]="priority" name="priority" required>
+    <option [value]="1">Низкий</option>
+    <option [value]="2">Средний</option>
+    <option [value]="3">Высокий</option>
+  </select>
+
+  <label>Статус:</label>
+  <select [(ngModel)]="statusId" name="statusId" required>
+    <option [value]="1">Не начата</option>
+    <option [value]="2">В процессе</option>
+    <option [value]="3">Завершена</option>
+  </select>
+
+  <button type="submit">Создать</button>
+</form>
+
+<button (click)="goBack()">Назад</button>
