@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule
   ]
 })
 export class MainModule { }
