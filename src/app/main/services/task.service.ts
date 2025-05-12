@@ -16,4 +16,7 @@ export class TaskService {
   addTask(task: any): Observable<any> {
     return this.http.post(this.apiUrl, task);
   }
+  getAllUsers() {
+    return this.http.get<any[]>('http://localhost:5135/api/user/users');
+  }
 }

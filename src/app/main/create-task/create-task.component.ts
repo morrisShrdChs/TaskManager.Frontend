@@ -14,8 +14,27 @@ export class CreateTaskComponent {
   expDate: string = '';
   priority: number = 1;
   statusId: number = 1;
+  userId: string = '';
+
+  users: any[] = [];
 
   constructor(private taskService: TaskService, private router: Router) { }
+
+  ngOnInit() {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.taskService.getAllUsers().subscribe({
+      next: data => {
+        console.log('Users loaded', data);
+        this.users = data;
+      },
+      error: err => {
+        console.error('Failed to load users', err);
+      }
+    });
+  }
 
   createTask() {
     const newTask = {
@@ -25,7 +44,8 @@ export class CreateTaskComponent {
       expDate: new Date(this.expDate).toISOString(),
       priority: this.priority,
       statusId: this.statusId,
-      userId: this.getUserIdFromToken()
+      userId: this.userId
+
     };
 
     this.taskService.addTask(newTask).subscribe(() => {
