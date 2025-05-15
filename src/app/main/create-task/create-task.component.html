@@ -1,52 +1,56 @@
-<h1>Создать задачу</h1>
+<div class="form-wrapper">
+  <h1>Создать задачу</h1>
 
-<form (ngSubmit)="createTask()">
-  <label>
-    Название задачи:
-    <input type="text" [(ngModel)]="name" name="name" required />
-  </label>
+  <form (ngSubmit)="createTask()">
+    <label>
+      Название задачи:
+      <input type="text" [(ngModel)]="name" name="name" required />
+    </label>
 
-  <label>
-    Описание:
-    <textarea [(ngModel)]="description" name="description"></textarea>
-  </label>
+    <label>
+      Описание:
+      <textarea [(ngModel)]="description" name="description"></textarea>
+    </label>
 
-  <label>
-    Дата начала:
-    <input type="date" [(ngModel)]="startDate" name="startDate" required />
-  </label>
+    <label>
+      Дата начала:
+      <input type="date" [(ngModel)]="startDate" name="startDate" required />
+    </label>
 
-  <label>
-    Дата окончания:
-    <input type="date" [(ngModel)]="expDate" name="expDate" />
-  </label>
+    <label>
+      Дата окончания:
+      <input type="date" [(ngModel)]="expDate" name="expDate" />
+    </label>
 
-  <label>
-    Приоритет:
-    <select [(ngModel)]="priority" name="priority" required>
-      <option [value]="1">Низкий</option>
-      <option [value]="2">Средний</option>
-      <option [value]="3">Высокий</option>
-    </select>
-  </label>
+    <label>
+      Приоритет:
+      <select [(ngModel)]="priority" name="priority" required>
+        <option [value]="1">Низкий</option>
+        <option [value]="2">Средний</option>
+        <option [value]="3">Высокий</option>
+      </select>
+    </label>
 
-  <label>
-    Статус:
-    <select [(ngModel)]="statusId" name="statusId" required>
-      <option [value]="1">Не начата</option>
-      <option [value]="2">В процессе</option>
-      <option [value]="3">Завершена</option>
-    </select>
-  </label>
+    <label>
+      Статус:
+      <select [(ngModel)]="statusId" name="statusId" required>
+        <option [value]="1">Не начата</option>
+        <option [value]="2">В процессе</option>
+        <option [value]="3">Завершена</option>
+      </select>
+    </label>
 
-  <label>
-    Назначить пользователя:
-    <select [(ngModel)]="userId" name="userId">
-      <option [value]="''">Не назначать</option>
-      <option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</option>
-    </select>
-  </label>
+    <label>
+      Назначить пользователя:
+      <select [(ngModel)]="userId" name="userId">
+        <option [value]="''">Не назначать</option>
+        <option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</option>
+      </select>
+    </label>
 
-  <button type="submit">Создать</button>
-  <button type="button" (click)="goBack()">Назад</button>
-</form>
+    <div class="buttons">
+      <button type="submit">Создать</button>
+      <button type="button" (click)="goBack()">Назад</button>
+    </div>
+  </form>
+</div>
