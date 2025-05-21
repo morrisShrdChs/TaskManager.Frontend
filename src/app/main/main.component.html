@@ -1,7 +1,10 @@
 <h2>Мои задачи</h2>
 
-  <button (click)="goToCreateTask()">Создать задачу</button>
+<button (click)="goToCreateTask()">Создать задачу</button>
 
-<ul>
-  <li *ngFor="let task of tasks">{{ task.title }}</li>
-</ul>
+<div *ngFor="let task of tasks" class="task-card">
+  <h3>{{ task.name }}</h3>
+  <p><strong>Описание:</strong> {{ task.description || 'нет описания' }}</p>
+  <p><strong>Дата начала:</strong> {{ task.startDate | date:'dd.MM.yyyy' }}</p>
+  <p><strong>Дата завершения:</strong> {{ task.expDate | date:'dd.MM.yyyy' }}</p>
+</div>

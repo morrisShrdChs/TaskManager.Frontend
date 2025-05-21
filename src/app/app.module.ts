@@ -2,10 +2,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskService } from './main/services/task.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
-  ],
+  //providers: [
+    //{ provide: HTTP_INTERCEPTORS, useClass: TaskService, multi: true }
+  //],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

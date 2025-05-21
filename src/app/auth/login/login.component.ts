@@ -14,16 +14,13 @@ export class LoginComponent {
 
   onSubmit() {
     this.authService.login(this.loginData).subscribe({
-      next: (res: any) => {
-        localStorage.setItem('token', res.token);
+      next: () => {
         this.router.navigate(['/main']);
       },
       error: err => {
         console.error(err);
         alert('Ошибка входа!');
-
-}
+      }
     });
   }
 }
-

@@ -19,8 +19,13 @@ export class MainComponent implements OnInit {
 
   loadTasks() {
     this.taskService.getTasks().subscribe(
-      data => this.tasks = data,
-      error => console.error('Error fetching tasks', error)
+      data => {
+        console.log('Полученные задачи:', data);
+        this.tasks = data;
+      },
+      error => {
+        console.error('Ошибка при загрузке задач', error);
+      }
     );
   }
 
@@ -36,12 +41,13 @@ export class MainComponent implements OnInit {
         this.newTaskTitle = '';
         this.loadTasks();
       },
-      error => console.error('Error adding task', error)
+      error => console.error('Ошибка при добавлении задачи', error)
     );
   }
+
+
 
   goToCreateTask() {
     this.router.navigate(['/main/create-task']);
   }
 }
-
