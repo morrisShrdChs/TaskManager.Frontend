@@ -1,35 +1,66 @@
-table {
+.main-container {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-}
-
-label {
-  margin-bottom: 10px;
-}
-
-input, textarea, select {
-  width: 100%;
-  padding: 6px;
-  margin-top: 4px;
+  padding: 30px;
   box-sizing: border-box;
 }
-
-button {
-  margin-top: 10px;
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
 }
+
+.main-container h2 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.main-container button {
+  margin-bottom: 24px;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+  .main-container button:hover {
+    background-color: #357ac9;
+  }
+
+.tasks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.task-card {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+  .task-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .task-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .task-card p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #555;
+  }

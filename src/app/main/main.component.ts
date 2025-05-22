@@ -45,6 +45,9 @@ export class MainComponent implements OnInit {
     );
   }
 
+  goToTask(id: number) {
+    this.router.navigate(['/task', id]);
+  }
 
 
   goToCreateTask() {

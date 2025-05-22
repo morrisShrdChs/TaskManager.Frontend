@@ -20,8 +20,9 @@ export class TaskService {
     });
   }
 
-
-
+  getTaskById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`, { withCredentials: true });
+  }
 
   getAllUsers(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:5135/api/user/users', {

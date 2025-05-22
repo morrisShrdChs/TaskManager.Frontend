@@ -1,0 +1,8 @@
+<div *ngIf="task" class="task-details-container">
+  <h2>{{ task.name }}</h2>
+  <p><strong>Описание:</strong> {{ task.description || 'нет описания' }}</p>
+  <p><strong>Дата начала:</strong> {{ task.startDate | date:'dd.MM.yyyy' }}</p>
+  <p><strong>Дата завершения:</strong> {{ task.expDate | date:'dd.MM.yyyy' }}</p>
+  <p><strong>Приоритет:</strong> {{ task.priority }}</p>
+  <p><strong>Статус:</strong> {{ task.statusId }}</p>
+</div>

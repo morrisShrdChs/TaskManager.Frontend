@@ -1,0 +1,27 @@
+.task-details-container {
+  width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+  .task-details-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+
+  .task-details-container p {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #555;
+  }
+
+  .task-details-container strong {
+    color: #333;
+  }
