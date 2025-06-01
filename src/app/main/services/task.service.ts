@@ -29,4 +29,11 @@ export class TaskService {
       withCredentials: true
     });
   }
+
+  updateTask(id: number, task: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, task, {
+      withCredentials: true
+    });
+  }
+
 }

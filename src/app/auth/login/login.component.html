@@ -1,5 +1,7 @@
 <div class="login-container">
+  
   <h2>Вход</h2>
+
   <form (ngSubmit)="onSubmit()">
     <label for="username">Имя пользователя</label>
     <input [(ngModel)]="loginData.userName" name="userName" type="text" id="username" required>
@@ -10,7 +12,7 @@
     <button type="submit">Войти</button>
 
     <div class="register-link">
-      <a routerLink="/auth/register">Нет аккаунта? Зарегистрироваться</a>
+      <a routerLink="/auth/register">Создать аккаунт</a>
     </div>
   </form>
 </div>

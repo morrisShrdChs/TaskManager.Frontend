@@ -1,8 +1,51 @@
-<div *ngIf="task" class="task-details-container">
-  <h2>{{ task.name }}</h2>
-  <p><strong>Описание:</strong> {{ task.description || 'нет описания' }}</p>
-  <p><strong>Дата начала:</strong> {{ task.startDate | date:'dd.MM.yyyy' }}</p>
-  <p><strong>Дата завершения:</strong> {{ task.expDate | date:'dd.MM.yyyy' }}</p>
-  <p><strong>Приоритет:</strong> {{ task.priority }}</p>
-  <p><strong>Статус:</strong> {{ task.statusId }}</p>
+<div *ngIf="task" class="form-wrapper">
+  <h1>Редактировать задачу</h1>
+  <a routerLink="/main" class="back-arrow" aria-label="Назад">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 6L9 12L15 18" stroke="#4a90e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+  <form (ngSubmit)="saveChanges()">
+    <label>
+      Название:
+      <input type="text" [(ngModel)]="task.name" name="name" required />
+    </label>
+
+    <label>
+      Описание:
+      <textarea [(ngModel)]="task.description" name="description"></textarea>
+    </label>
+
+    <label>
+      Дата начала:
+      <input type="date" [(ngModel)]="task.startDate" name="startDate" disabled />
+    </label>
+
+    <label>
+      Дата завершения:
+      <input type="date" [(ngModel)]="task.expDate" name="expDate" disabled />
+    </label>
+
+    <label>
+      Приоритет:
+      <select [(ngModel)]="task.priority" name="priority" required>
+        <option [value]="1">Низкий</option>
+        <option [value]="2">Средний</option>
+        <option [value]="3">Высокий</option>
+      </select>
+    </label>
+
+    <label>
+      Статус:
+      <select [(ngModel)]="task.statusId" name="statusId" required>
+        <option [value]="1">Не начата</option>
+        <option [value]="2">В процессе</option>
+        <option [value]="3">Завершена</option>
+      </select>
+    </label>
+
+    <div class="buttons">
+      <button type="submit">Сохранить</button>
+    </div>
+  </form>
 </div>

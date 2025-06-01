@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../services/task.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-task-details',
@@ -23,4 +24,16 @@ export class TaskDetailComponent implements OnInit {
       });
     }
   }
+  saveChanges() {
+    this.taskService.updateTask(this.task.id, this.task).subscribe({
+      next: () => {
+        alert('Задача успешно обновлена');
+      },
+      error: (err: HttpErrorResponse) => {
+        console.error('Ошибка при обновлении задачи', err);
+        alert('Не удалось обновить задачу');
+      }
+    });
+  }
+
 }

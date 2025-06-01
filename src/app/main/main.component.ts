@@ -53,4 +53,36 @@ export class MainComponent implements OnInit {
   goToCreateTask() {
     this.router.navigate(['/main/create-task']);
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.router.navigate(['/auth/login']);
+  }
+
+  getPriorityLabel(priority: number): string {
+    switch (priority) {
+      case 1: return 'Низкий';
+      case 2: return 'Средний';
+      case 3: return 'Высокий';
+      default: return 'Неизвестно';
+    }
+  }
+
+  getStatusLabel(statusId: number): string {
+    switch (statusId) {
+      case 1: return 'В ожидании';
+      case 2: return 'В процессе';
+      case 3: return 'Завершена';
+      default: return 'Неизвестно';
+    }
+  }
+
+  getStatusClass(statusId: number): string {
+    switch (statusId) {
+      case 0: return 'text-danger';
+      case 1: return 'text-warning';
+      case 2: return 'text-success';
+      default: return 'text-muted';
+    }
+  }
 }
